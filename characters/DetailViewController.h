@@ -11,6 +11,7 @@
 @interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) IBOutlet UIImageView *imgCharacterPicture;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @end

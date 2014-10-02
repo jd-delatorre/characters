@@ -36,7 +36,15 @@
     // Update the user interface for the detail item.
 
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        NSString *imageAddress = [NSString stringWithFormat:@"http://ios7developer.com/book/%@.jpg",
+                                  [self.detailItem description]];
+        imageAddress = [imageAddress lowercaseString];
+        
+        NSURL *url = [NSURL URLWithString:imageAddress];
+        NSData *imageData = [[NSData alloc]initWithContentsOfURL:url];
+        _imgCharacterPicture.image = [UIImage imageWithData:imageData];
+        
+        self.detailDescriptionLabel.text = imageAddress;
     }
 }
 
